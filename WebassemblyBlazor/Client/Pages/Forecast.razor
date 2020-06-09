@@ -1,0 +1,23 @@
+﻿@using WebassemblyBlazor.Shared
+
+<div class="card">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">
+            @forecast.Date.ToShortDateString() <br />
+            @forecast.TemperatureC<br />
+            @forecast.TemperatureF<br />
+            @forecast.Summary<br />
+        </p>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+</div>
+
+
+@code {
+
+    [Parameter]
+    public WeatherForecast forecast { get; set; }
+
+}

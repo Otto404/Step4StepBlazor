@@ -3,11 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30128.36
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebassemblyBlazor.Server", "WebassemblyBlazor\Server\WebassemblyBlazor.Server.csproj", "{F9F593BA-D716-42F9-A2A5-1B8E177EBB9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebassemblyBlazor.Server", "WebassemblyBlazor\Server\WebassemblyBlazor.Server.csproj", "{F9F593BA-D716-42F9-A2A5-1B8E177EBB9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebassemblyBlazor.Client", "WebassemblyBlazor\Client\WebassemblyBlazor.Client.csproj", "{CE6173F1-DB63-425A-A97F-05699AFF7AA0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebassemblyBlazor.Client", "WebassemblyBlazor\Client\WebassemblyBlazor.Client.csproj", "{CE6173F1-DB63-425A-A97F-05699AFF7AA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebassemblyBlazor.Shared", "WebassemblyBlazor\Shared\WebassemblyBlazor.Shared.csproj", "{6A36FA40-EB84-4CB9-AC76-847D48CE8038}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebassemblyBlazor.Shared", "WebassemblyBlazor\Shared\WebassemblyBlazor.Shared.csproj", "{6A36FA40-EB84-4CB9-AC76-847D48CE8038}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infos", "Infos", "{6FDEC834-112C-4F7D-89E2-03CCCDA59F0B}"
+	ProjectSection(SolutionItems) = preProject
+		Script.md = Script.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
