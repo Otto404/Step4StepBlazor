@@ -1,0 +1,41 @@
+﻿@page "/FormValidation"
+@using WebassemblyBlazor.Client.Code;
+
+@* Formular mit Blazor-Objekten (InputText, InputCheckbox,...)  *@
+
+<h3>Example-Model Form Validation</h3>
+<EditForm Model="@exampleModel" OnValidSubmit="HandleValidSubmit" OnInvalidSubmit="HandleInvalidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <InputText id="name" @bind-Value="exampleModel.Name" />
+    <div class="form-group">
+        <InputCheckbox id="married" @bind-Value="exampleModel.IsMarried" class="form-control" />
+    </div>
+    <div class="form-group">
+        <InputSelect id="gender" @bind-Value="exampleModel.Gender" class="form-control">
+            <option value="@Gender.female">Frau</option>
+            <option value="@Gender.male">Herr</option>
+        </InputSelect>
+    </div>
+    <button type="submit">Submit</button>
+</EditForm>
+<hr/>
+Erfolg: @success <br/>
+Eingegeben: @exampleModel.Name, @exampleModel.IsMarried, @exampleModel.Gender
+
+@code {
+    private ExampleModel exampleModel = new ExampleModel();
+    bool success { get; set; }
+
+    private void HandleValidSubmit()
+    {
+        Console.WriteLine("OnValidSubmit");
+        success = true;
+    }
+
+    private void HandleInvalidSubmit()
+    {
+        success = false;
+    }
+}

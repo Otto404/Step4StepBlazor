@@ -2,6 +2,8 @@
 @using Microsoft.AspNetCore.Authorization
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
 @using WebassemblyBlazor.Shared
+@using WebassemblyBlazor.Client.Components
+
 @attribute [Authorize]
 @inject HttpClient Http
 
@@ -14,13 +16,13 @@
 }
 else
 {
-<div class="card-deck">
-    @foreach (var forecast in forecasts)
-    {
-        <Forecast forecast="forecast"></Forecast>
+    <div class="card-deck">
+        @foreach (var forecast in forecasts)
+        {
+            <Forecast forecast="forecast"></Forecast>
 
-    }
-</div>
+        }
+    </div>
 }
 
 @code {

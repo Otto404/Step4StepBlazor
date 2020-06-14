@@ -1,0 +1,24 @@
+﻿@page "/greeter"
+@using WebassemblyBlazor.Client.Components
+
+<h3>04b Greeter usage</h3>
+
+<Greeter Greeting="Hallo Welt" @ref="greeter"/>
+
+<button class="btn btn-primary" @onclick="Welcome">Hallo</button>
+<button class="btn btn-primary" @onclick="Goodbye">Tschüss</button>
+
+@code {
+
+    Greeter greeter;
+
+    void Welcome()
+    {
+        greeter.Greet("Hallo");
+    }
+
+    void Goodbye()
+    {
+        greeter.Greet("Bye, bye");
+    }
+}

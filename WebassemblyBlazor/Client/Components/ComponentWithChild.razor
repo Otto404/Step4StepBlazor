@@ -1,0 +1,9 @@
+﻿<div style="border: 1px solid black; padding:7px; margin: 7px; background-color:aliceblue">
+    <h3>Komponente mit "ChildContent"</h3>
+    @ChildContent
+</div>
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+}

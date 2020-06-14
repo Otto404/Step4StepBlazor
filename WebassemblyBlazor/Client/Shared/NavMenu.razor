@@ -1,4 +1,6 @@
-﻿<div class="top-row pl-4 navbar navbar-dark">
+﻿@using WebassemblyBlazor.Client.Code
+
+<div class="top-row pl-4 navbar navbar-dark">
     <a class="navbar-brand" href="">WebassemblyBlazor</a>
     <button class="navbar-toggler" @onclick="ToggleNavMenu">
         <span class="navbar-toggler-icon"></span>
@@ -22,10 +24,38 @@
                 <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
             </NavLink>
         </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="01-binding">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> 01 Binding
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="person">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> 02 Person
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="FormValidation">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> 03 Formuar-Validierung
+            </NavLink>
+        </li>
+        <WebassemblyBlazor.Client.Components.Submenu Caption="Html (Parameter) in Componenten" menuitems="@subItems" />
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="greeter">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> 04 greeter
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="intCounter">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> 06 Code behind
+            </NavLink>
+        </li>
     </ul>
 </div>
 
 @code {
+    
+
     private bool collapseNavMenu = true;
 
     private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
@@ -34,4 +64,11 @@
     {
         collapseNavMenu = !collapseNavMenu;
     }
+
+    private MenuItem[] subItems = new MenuItem[] 
+    { 
+        new MenuItem {Caption="Einzelner ChildContent", Href="05_Child" },
+        new MenuItem{Caption="B", Href = "#"} 
+    };
+
 }

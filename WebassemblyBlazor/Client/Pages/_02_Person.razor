@@ -1,0 +1,57 @@
+﻿@page "/person"
+
+@using WebassemblyBlazor.Client.Code;
+@using Microsoft.AspNetCore.Components.Forms;
+
+
+@* Formular, minimaler Unterschied zu "normalen" html-js Formularen *@
+
+<h3>02_Person</h3>
+<EditForm Model="person" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <div class="form-group">
+        <label for="vorname">Vorname</label>
+        <input type="text" class="form-control" @bind-value="person.Vorname">
+    </div>
+    <div class="form-group">
+        <label for="vorname">Nachname</label>
+        <input type="text" class="form-control" @bind-value="person.Nachname">
+    </div>
+    <div class="form-group">
+        <label for="vorname">Anrede</label>
+        <select class="form-control" @bind="@person.Geschlecht">
+            <option value="@Gender.female">@Gender.female.ToString()</option>
+            <option value="@Gender.male">@Gender.male.ToString()</option>
+        </select>
+        @*<InputSelect TValue="Gender" class="form-control"
+                     @bind-value="person.Geschlecht">
+            <option value="@Gender.female">Frau</option>
+            <option value="@Gender.male">Herr</option>
+        </InputSelect>*@
+    </div>
+    <div class="form-group">
+        <label for="alter">Alter</label>
+        <input type="number" class="form-control" @bind-value="person.Alter">
+    </div>
+    <div class="form-group">
+        <label for="istVerheiratet">Ist verheiratet</label>
+      @*  <InputCheckbox name="xyz" class="form-control" @bind-value="@person.IstVerheiratet"></InputCheckbox>*@
+        <input type="checkbox" @bind-value="person.IstVerheiratet" />
+    </div>
+    <div class="form-group">
+        <label for="alter">Hochzeitstag</label>
+        <input type="date" class="form-control" @bind-value="person.Heiratsdatum" disabled="@(!person.IstVerheiratet)">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</EditForm>
+
+@code {
+    private Person person = new Person();
+
+    private void HandleValidSubmit()
+    {
+
+    }
+
+}

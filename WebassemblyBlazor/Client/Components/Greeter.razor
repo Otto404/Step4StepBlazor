@@ -1,0 +1,15 @@
+﻿<div style="background-color:aliceblue">
+    <h3>Vom "Greeter": <b>@Greeting</b></h3>
+</div>
+
+@code {
+    [Parameter]
+    public string Greeting { get; set; }
+
+    public void Greet (string greeting)
+    {
+        Greeting = greeting;
+        // Notwendig.
+        this.StateHasChanged();
+    }
+}

@@ -1,0 +1,27 @@
+﻿@page "/01-binding"
+<h1>Zweiweg Bindung</h1>
+<h2>Eingabe</h2>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input @bind-value="Email"
+               type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">        
+    </div>
+    <div class="form-group form-check">
+        <input @bind-value="IsChecked"
+               type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+   <h2>Ausgabe</h2>
+<dl>
+    <dt>Email</dt>
+    <dd>@Email</dd>
+    <dt>Checked</dt>
+    <dd>@IsChecked</dd>
+    <dd><button class="btn btn-danger" disabled="@IsChecked">@(IsChecked?"Disabled":"Enabled")</button></dd>
+</dl>
+
+@code {
+    public string Email { get; set; }
+    public bool IsChecked { get; set; }
+}

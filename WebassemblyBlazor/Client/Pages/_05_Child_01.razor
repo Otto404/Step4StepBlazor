@@ -1,0 +1,24 @@
+﻿@page "/05_Child"
+@using WebassemblyBlazor.Client.Components
+
+<h3>Componente mit ChildContext</h3>
+
+<ComponentWithChild>
+    <div style="background-color:cornsilk">
+        <h1>Der Parameter</h1>
+    </div>
+</ComponentWithChild>
+
+@* natürlich kann der Parameter (ChildContent) auch aus Html + Blazor Komponenten zusammengesetzt sein *@
+
+<ComponentWithChild>
+    <div style="background-color:cornsilk">
+        <h1>und nun der Greeter:</h1>
+        <Greeter Greeting="Grüße vom Greeter" />
+    </div>
+</ComponentWithChild>
+
+
+@code {
+
+}

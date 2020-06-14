@@ -3,18 +3,25 @@ Forecast (Wetter wäre eine alt. Benennung)
 neues Blazor-Control.
 Etwas HTML/Bootstrap [https://getbootstrap.com/docs/4.5/components/card/]
 FetchData etwas umgebaut.
+### NavLink
+https://github.com/dotnet/aspnetcore/blob/master/src/Components/Web/src/Routing/NavLink.cs
 
 ## Tipps
 ### Komponenten
 Um Blazor entwickelt sich eine starke Infrastruktur. 
 Zahlreiche kommerzielle und nicht-kommerzielle Angebote werben um die Aufmerksamkeit der Entwickler.
 
+- grid https://github.com/gustavnavar/Grid.Blazor
 - Radzen 
-[Radzen]
 
-    [https://blazor.radzen.com/]
-- MatBlazor [][https://www.matblazor.com/]
-  - 
+  [Radzen][https://blazor.radzen.com/]
+
+- MatBlazor 
+
+  [https://www.matblazor.com/]
+
+ - https://github.com/BlazorFluentUI/BlazorFluentUI (mit tooltip)
+
 ### Unterstützt der Browser Webassembly?
 ```javascript
     <script src="_framework/blazor.webassembly.js" autostart="false"></script>
@@ -44,3 +51,9 @@ Zahlreiche kommerzielle und nicht-kommerzielle Angebote werben um die Aufmerksam
     </script>
 ```
 [Wael Kdouh][https://medium.com/@waelkdouh/how-to-detect-unsupported-browsers-under-a-blazor-webassembly-application-bc11ab0ee015]
+
+# private Bemerkungen
+
+InputSelect, InputCheckbox etc. führen zu Fehlern.
+
+umbenennungen von Pages / Componenten führt zu Fehlern.

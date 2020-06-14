@@ -1,0 +1,17 @@
+﻿@page "/intCounter"
+@using WebassemblyBlazor.Client.Components
+<h3>_06_IntCounter</h3>
+
+<WebassemblyBlazor.Client.Components.IntCounterCodeBehind OnUpdate="Update">
+
+</WebassemblyBlazor.Client.Components.IntCounterCodeBehind>
+                                     
+                                     
+@code {
+    int Count { get; set; }
+
+    void Update(int nr)
+    {
+        Count = nr;
+    }
+}
