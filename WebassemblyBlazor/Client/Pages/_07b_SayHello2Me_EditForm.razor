@@ -1,0 +1,63 @@
+﻿@page "/SayHello2"
+
+<EditForm Model="@nameInput" OnValidSubmit="HandleValidSubmit" OnInvalidSubmit="HandleInvalidSubmit">
+    <div class="form-group">
+        <h3>Say Hello 2 Me</h3>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="exampleAddon">Name</span>
+            </div>
+
+            <InputText id="name" @bind-Value="nameInput.Name" class="form-control" placeholder="Name" />
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="exampleAddon">Name sofort</span>
+            </div>
+            <InputText id="name" @bind-Value="nameInput.NameSofort" />
+        </div>
+
+        @nameInput.Nachricht
+        <button type="button" @onclick="nameInput.SayHellow">Sag Hallo</button>
+    </div>
+</EditForm>
+
+
+
+@code {
+
+
+    public class NameInput
+    {
+        public string Name { get; set; }
+        public string Nachricht { get; set; }
+        string nameSofort = "";
+        public string NameSofort
+        {
+            get
+            {
+                return nameSofort;
+            }
+            set
+            {
+                nameSofort = value;
+
+                SayHellowSofort();
+            }
+        }
+        public void SayHellowSofort()
+        {
+            Nachricht = "Hallo " + NameSofort;
+        }
+        public void SayHellow()
+        {
+            Nachricht = "Hallo " + Name;
+        }
+    }
+
+    public NameInput nameInput { get; set; } = new NameInput();
+
+
+    void HandleValidSubmit() { }
+    void HandleInvalidSubmit() { }
+}

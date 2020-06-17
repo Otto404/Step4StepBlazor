@@ -1,70 +1,60 @@
 ﻿@page "/SayHello"
 
-    @*<EditForm Model="@nameInput" OnValidSubmit="HandleValidSubmit" OnInvalidSubmit="HandleInvalidSubmit">*@
-        <div class="form-group">
-            <h3>Say Hello 2 Me</h3>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="exampleAddon">Name</span>
-                </div>
-                <input @bind-value="Name" class="form-control" placeholder="Name" />
-                @*<InputText id="name" @bind-Value="Name" class="form-control" placeholder="Name"/>*@
-            </div>
-            <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                    <span class="input-group-text" id="exampleAddon">Name sofort</span>
-                </div>
-                <input @bind-value="NameSofort" class="form-control" placeholder="Name-Sofort" />
-                @*<InputText id="name" @bind-Value="NameSofort" />*@
-            </div>            
 
-            @Nachricht
-            <button type="button" @onclick="SayHellow">Sag Hallo</button>
+<div class="form-group">
+    <h3>Say Hello 2 Me</h3>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="exampleAddon">Name</span>
         </div>
-    @*</EditForm>*@
+        <input @bind-value="Name" class="form-control" placeholder="Name" />
+
+    </div>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="exampleAddon">Name sofort</span>
+        </div>
+        <input @bind-value="NameSofort" class="form-control" placeholder="Name-Sofort" />
+
+    </div>
+
+    @Nachricht
+    <button type="button" @onclick="SayHellow">Sag Hallo</button>
+</div>
 
 
 
 
+@code {
 
 
-        @code {
 
-
-            //public class NameInput
-            //{
-            //    public string Name { get; set; }
-            //    public string NameSofort { get; set; }
-            //}
-
-            //public NameInput nameInput { get; set; } = new NameInput();
-
-            string Nachricht { get; set; }
-            string Name { get; set; } = "";
-            string nameSofort = "";
-            string NameSofort
-            {
-                get
-                {
-                    return nameSofort;
-                }
-                set
-                {
-                    nameSofort = value;
-                    SayHellowSofort();
-                }
-            }
-
-            void SayHellow()
-            {
-                Nachricht = "Hallo " + Name;
-            }
-
-            void SayHellowSofort()
-            {
-                Nachricht = "Hallo " + NameSofort;
-            }
-
-            void HandleValidSubmit() { }
-            void HandleInvalidSubmit() { }
+    string Nachricht { get; set; }
+    string Name { get; set; } = "";
+    string nameSofort = "";
+    string NameSofort
+    {
+        get
+        {
+            return nameSofort;
         }
+        set
+        {
+            nameSofort = value;
+            SayHellowSofort();
+        }
+    }
+
+    void SayHellow()
+    {
+        Nachricht = "Hallo " + Name;
+    }
+
+    void SayHellowSofort()
+    {
+        Nachricht = "Hallo " + NameSofort;
+    }
+
+    void HandleValidSubmit() { }
+    void HandleInvalidSubmit() { }
+}
