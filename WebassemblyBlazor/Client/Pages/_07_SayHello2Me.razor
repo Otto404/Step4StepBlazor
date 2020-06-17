@@ -1,26 +1,26 @@
 ﻿@page "/SayHello"
 
 
-<div class="form-group">
-    <h3>Say Hello 2 Me</h3>
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="exampleAddon">Name</span>
+    <div class="form-group">
+        <h3>Say Hello 2 Me</h3>
+        <div>Mit der Tab-Taste weiter</div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="exampleAddon">Name sofort</span>
+            </div>
+            <input @bind-value="NameSofort" class="form-control" placeholder="Name-Sofort" />
         </div>
-        <input @bind-value="Name" class="form-control" placeholder="Name" />
-
-    </div>
-    <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <span class="input-group-text" id="exampleAddon">Name sofort</span>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="exampleAddon">Name</span>
+            </div>
+            <input @bind-value="Name" class="form-control" placeholder="Name" />
         </div>
-        <input @bind-value="NameSofort" class="form-control" placeholder="Name-Sofort" />
 
+
+        @Nachricht
+        <button type="button" @onclick="SayHellow">Sag Hallo</button>
     </div>
-
-    @Nachricht
-    <button type="button" @onclick="SayHellow">Sag Hallo</button>
-</div>
 
 
 
