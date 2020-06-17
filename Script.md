@@ -6,6 +6,9 @@ FetchData etwas umgebaut.
 ### NavLink
 https://github.com/dotnet/aspnetcore/blob/master/src/Components/Web/src/Routing/NavLink.cs
 
+
+## Formulare
+InputText kann nicht ohne EditForm sein.
 ## Tipps
 ### Komponenten
 Um Blazor entwickelt sich eine starke Infrastruktur. 
